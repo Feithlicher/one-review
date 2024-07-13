@@ -39,7 +39,9 @@ public class ProductsController(ProductsService productsService) : ControllerBas
         Product product = _productsService.Get(productId);
         
         // return 200 ok response
-        return Ok(ProductResponse.FromDomain(product));
+        return product is null
+            ? NotFound() 
+            : Ok(ProductResponse.FromDomain(product));
     }
 
 

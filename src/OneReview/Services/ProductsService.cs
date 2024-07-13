@@ -4,16 +4,17 @@ namespace OneReview.Services;
 
 public class ProductsService
 {
-    // private static readonly List<Product> ProductsRepository = [];
-    private static readonly List<Product> ProductsRepository = new List<Product>();
+    private static readonly List<Product> ProductsRepository = [];
     
     public void Create(Product product)
     {
         // store the product in the database
+        ProductsRepository.Add(product);
     }
 
-    public Product Get(Guid id)
+    public Product? Get(Guid productId)
     {
-        return null;
+        // pull the product from the database
+        return ProductsRepository.Find(x => x.Id == productId);
     }
 }
