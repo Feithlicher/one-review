@@ -1,0 +1,8 @@
+POST http://localhost:5157/products
+Content-Type: application/json
+
+{
+    "Name": "MacBook Pro M3 Max",
+    "Category": "Electronics",
+    "SubCategory": "Laptops"
+}
